@@ -13,7 +13,6 @@ void solve()
 		cin >> ss[i];
 		s.insert(ss[i]);
 	}
-
 	for (int i = 1; i <= n; i++)
 	{
 		int flag = 1;
