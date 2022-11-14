@@ -1,10 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+int A[100][100];
+void array(int a[][100],int m,int n){
+	
+}
 void solve(){
 	long long x,y,n,k;
 	cin>>n;
 	vector<long long> vec;
+//	array(A,4,4);
 	for(long long i = 1;i<=n;i++){
 		long long a;
 		cin>>a;
