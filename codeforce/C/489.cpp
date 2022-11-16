@@ -29,29 +29,36 @@ void solve(){
 		}
 		i++;
 	}
-	i = 0;
+	i=0;
 	while(i<m){
 		
+	
+		if(s1>0){
+			int oron=(m-i-1)*9+1;
+			if(oron>=s1){
+			
+			if(str2.size()>0&&str[0]=='1'){
+				str2 = str2 +"0";
+			}else{
+				str2= str2+"1";
+					s1--;
+			}
 		
+		}else{
+				int o = m-i;
+				int temp =  s1 -( (o-1)*9);
+				str2 = str2+to_string(temp);
+				s1 = s1 -temp;
+			}
+		}
+		else {
+			str2 = str2 + "0";
+		}
 		i++;
 	}
-
 	if(str[0]=='0'||s>0){
 		cout<<-1<<" "<<-1;
 	}else{
-//		string str2 ;
-//		for(int i = 0;i<str.size();i++){
-//			if(str[i]!='0'){
-//
-//				str2=str2+str[i];
-//			}
-//		}
-//		reverse(str2.begin(),str2.end());
-		
-//		for(int i =str2.size();i<str.size();i++ ){
-//			str2.insert(str2.begin()+1,'0');  
-//		}
-		
 		cout<<str2<<" "<<str<<endl;
 	}
 	
