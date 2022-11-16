@@ -1,72 +1,46 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define ll long long
-void solve(){
-	ll m,s,s1;
-	cin>>m>>s;
-	if(m==1&&s==0){
-		cout<<"0"<<" "<<"0"<<endl;
-		return;
-	}
-	s1 =s;
-	int i = 0;
-	string str;
-	string str2;
-	while(i<m){
-		
-		if(s>0){
-			if(s>9){
-				str = str+"9";
-				s = s - 9;
-			}else{
-				
-				str = str + to_string(s); 
-				s = 0;
-			
-			}
-		}else{
-			str = str + "0";
-		}
-		i++;
-	}
-	i=0;
-	while(i<m){
-		
-	
-		if(s1>0){
-			int oron=(m-i-1)*9+1;
-			if(oron>=s1){
-			
-			if(str2.size()>0&&str[0]=='1'){
-				str2 = str2 +"0";
-			}else{
-				str2= str2+"1";
-					s1--;
-			}
-		
-		}else{
-				int o = m-i;
-				int temp =  s1 -( (o-1)*9);
-				str2 = str2+to_string(temp);
-				s1 = s1 -temp;
-			}
-		}
-		else {
-			str2 = str2 + "0";
-		}
-		i++;
-	}
-	if(str[0]=='0'||s>0){
-		cout<<-1<<" "<<-1;
-	}else{
-		cout<<str2<<" "<<str<<endl;
-	}
-	
-	
+ 
+string solveMax(int m, int s, int isFirstDigit)
+{
+  if (m == 1) string(1, char(s + '0'));
+  for (int i = min(9, s); i >= isFirstDigit; i--)
+    if (s - i <= (m - 1) * 9)
+      return string(1, char(i + '0')) + solveMax(m - 1, s - i, 0);
+  return "";
 }
-int main(){
-	int t=1;
-	while(t--){
-		solve();
-	}
+ 
+string solveMin(int m, int s, int isFirstDigit)
+{
+  if (m == 1) string(1, char(s + '0'));
+  
+  for (int i = isFirstDigit; i <= min(9, s); i++){
+  	cout<<m<<" ";
+  	if (s - i <= (m - 1) * 9)
+      return string(1, char(i + '0')) + solveMin(m - 1, s - i, 0);
+  }
+
+    
+  return "";
+}
+ 
+int main()
+{
+  ios::sync_with_stdio(0);
+  int m, s;
+  cin >> m >> s;
+  
+  if (!s)
+  {
+    cout << (m == 1 ? "0 0" : "-1 -1") << endl;
+    return 0;
+  }
+  
+  if (s > m * 9)
+  {
+    cout << "-1 -1\n";
+    return 0;
+  }
+  
+  cout << solveMin(m, s, 1) << ' ' << solveMax(m, s, 1) << endl;
 }
