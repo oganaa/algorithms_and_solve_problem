@@ -2,18 +2,20 @@
 using namespace std;
 #define ll long long
 void solve(){
-	int a,b,c,d;
-	cin>>a>>b>>c>>d;
-	int ans = 0;
-	if(b>a) ans++;
-	if(c>a) ans++;
-	if(d>a)ans++;
-	cout<<ans<<endl;
+	int a;
+	cin>>a;
+	int ans = a;
+	cout<<a/2<<endl;
+	for(int i = 1;i<=ans/2-1;i++){
+		cout<<"2"<<" ";
+	}
+	if(ans%2==0){
+		cout<<"2";
+	}else cout<<"3";
 }
 int main(){
 	int t=1;
-	cin>>t;
-	
+//	cin>>t;
 	while(t--){
 		solve();
 	}
