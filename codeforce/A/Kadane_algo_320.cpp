@@ -9,24 +9,27 @@ void solve()
 	for(int i = 0;i<n;i++){
 		int a;
 		cin>>a;
-		if(a==1) k++;
 		vec.push_back(a);
 	}
-	int s = 0;
-	int ans = 0;
+	int ones= 0;
 	for(int i = 0;i<n;i++){
-		s = k;
-		for(int j = i;j<n;j++)
-		{
-			if(vec[j]==1) s--;
-			else{
-				s++;
-			}
-			ans = max(ans,s);
-		}
+		ones = ones + vec[i];
+		if(vec[i]) vec[i] = -1;
+		else vec[i] = 1;
+	}
+	if(ones == n){
+		cout<<n-1<<endl;
+		return ;
+	}
+	int ans = 0,x=0;
+	for(int i = 0;i<n;i++){
+		
+		x = max(0,x+vec[i]);
+		ans = max(ans,x);
 		
 	}
-	cout<<ans;
+	cout<<ans+ones<<endl  ;
+	
 }
 int main()
 {
