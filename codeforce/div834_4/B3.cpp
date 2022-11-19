@@ -13,8 +13,6 @@ void solve()
 		maxI=max(m,maxI);
 		arr[m]++;
 	}
-	
- 
 	for(int i =1;i<=maxI;i++){
 		if(arr[i]==0){
 			s=s-i;
