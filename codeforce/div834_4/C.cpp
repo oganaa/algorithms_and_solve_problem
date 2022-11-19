@@ -12,10 +12,10 @@ void solve()
 	}else if( (x+a>right&&a-x<left) ||( b+x>right&&b-x<left )){
 		cout<<"-1"<<endl;
 	}else{
-		if((x+a<=right&&x+a<=b)){
+		if((x+a<=right&&x+a<=b)||(b+x<=right&&b+x<=a)){
 			cout<<"1"<<endl;
 		}else{
-			if((b+x<=right)){
+			if((b+x<=right)||a+x<=right){
 				cout<<"2"<<endl;
 			}else{
 				cout<<"3"<<endl;
