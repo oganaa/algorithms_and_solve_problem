@@ -19,15 +19,10 @@ void solve()
 		 	ans=  it->second;
 		 	result = it->first;
 		 }
-    }
-    cout<<result;
-}
-int main()
-{
-	int t = 1;
-//	cin>>t;
-	while (t--)
+    }cin>>t;
 	{
 		solve();
 	}
 }
+
+//
