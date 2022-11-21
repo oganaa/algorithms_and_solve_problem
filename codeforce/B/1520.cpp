@@ -1,32 +1,26 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #define ll long long
-void solve(){
-	ll n,s,s1;
+void solve()
+{
+	bool isLoop=true;
+	ll a,b,n,ans = 0;
 	cin>>n;
-	if(n<=9){
-		cout<<n;
-	}else{
-		int ans = 9;
-		while(n>10){
-			n=n/10;
-			if(n>9){
-				ans = ans + 9;
-			}else{
-				ans = ans+n; 
+	for(int i = 1;i<=n;i=i*10+1){
+		for(int digit = 1 ;digit<=9;digit++){
+			if(i*digit<=n){
+				ans++;
 			}
-			cout<<ans<<" ";
-		
 		}
-//		cout<<ans<<endl;
 	}
-	
-	
-	
+	cout<<ans<<endl;
 }
-int main(){
-	int t=1;
-	while(t--){
+int main()
+{
+	int t = 1;
+	cin>>t;
+	while (t--)
+	{
 		solve();
 	}
 }
