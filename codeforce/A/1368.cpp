@@ -6,7 +6,7 @@ void solve()
 	bool isLoop=true;
 	ll a,b,n,ans = 0;
 	cin>>a>>b>>n;
-	while(isLoop){
+	while(isLoop){s
 		if(a>n||b>n){
 			isLoop=false;
 			break;
