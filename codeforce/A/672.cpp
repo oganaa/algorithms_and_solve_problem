@@ -2,20 +2,13 @@
 using namespace std;
 
 void solve(){
-	long long x,y,n,k;
-	cin>>n;
-    string s="123456789";
-	for(int i = 10;i<=n;i++){
-		string temp = "";
-		int a = i;
-		while(a>0){
-			temp = temp + to_string(a%10);
-			a /=10;
-		}
-		reverse(temp.begin(), temp.end());
-		s = s + temp;
-	}
-	cout<<s[n-1];
+	long long x,y,k;
+	cin>>x>>y;
+	k = max(x,y);
+	k = 6 - k;
+	string array [] = {"1/6","1/3","1/2","2/3","5/6","1/1"};
+	cout<<array[k]<<endl;
+	
 }
 int main(){
 	long long t=1;
