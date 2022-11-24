@@ -27,6 +27,11 @@ void solve() {
 	   }
 	   else b[i]=b[i+1];
 	}
+	FORd(i,n,1)
+	{
+	  	cout<<b[i]<<" ";
+	}
+	cout<<endl;
 	FOR(i,2,n)
 	{
 		if(a[i-1]==1)
@@ -35,6 +40,11 @@ void solve() {
 		}
 		else c[i]=c[i-1];
 	}
+	FORd(i,n,1)
+	{
+	  	cout<<c[i]<<" ";
+	}
+	cout<<endl;
     ll sum=0,cha=0;
     FOR(i,1,n)
 	{
