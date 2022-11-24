@@ -16,6 +16,7 @@ void solve()
 	int sum = 0;
 	for(int i = 0;i<m;i++)
 	{
+		if(v[i]<0 )
 		sum =sum + v[i];
 	}
 	cout<<abs(sum);
