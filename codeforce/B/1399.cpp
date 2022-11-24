@@ -1,40 +1,22 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-void solve()
-{
-	ll n,m,k=0;
-	cin>>n;
-	vector<ll> candies;
-	vector<ll> oranges;
-	ll sum1=0;
-	ll sum2= 0;
-	for(int i = 0;i<n;i++){
-		ll a;
-		cin>>a;
-		sum1= sum1 + a;
-		candies.push_back(a);
-	}
 
-	for(int i = 0;i<n;i++){
-		ll a;
-		
-		cin>>a;
-		sum2= sum2 + a;
-		oranges.push_back(a);
+void solve(){
+	long long x,y,k,n;
+	cin >> n;
+	vector<int> a(n), b(n);
+	for (auto &it : a) cin >> it;
+	for (auto &it : b) cin >> it;
+	int minorange = *min_element(a.begin(),a.end());
+	int minapple = *min_element(b.begin(),b.end());
+	long long answer = 0;
+	for(int i  = 0;i<n;i++){
+		answer += max(a[i]-minorange,b[i]-minapple);
 	}
-	int sum = 0;
-//	for(int i = 0;i<n;i++){
-//		sum = sum + (candies[i]-oranges[i]);
-//	}
-	cout<<sum2-sum1<<endl;
+	cout<<answer<<endl;
 }
-int main()
-{
-	int t = 1;
+int main(){
+	long long t=1;
 	cin>>t;
-	while (t--)
-	{
-		solve();
-	}
+	while(t--) solve();
 }
