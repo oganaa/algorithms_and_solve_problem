@@ -24,18 +24,25 @@ bool isPalindrome(string S)
  
 void solve(){
 	long long a,b,n,ans=1;
-	cin>>a;
-	b = a;
-	int j = 2;
-	while(j<=a/2){
-		if((b-j)%j==0) ans++;
-		j++;
-	}
-	cout<<ans;
+	cin>>n;
+	string s;
+	cin>>s;
+
+	stack<char> st ;
 	
+	for(int i = 0;i<n;i++){
+		if(s[i]=='('){
+			st.push('(');
+		}else{
+			if(st.size()>0&&st.top()=='('){
+				st.pop();
+			}
+		}
+	}
+		cout<<st.size()<<endl;
 }
 int main(){
 	long long t=1;
-//	cin>>t;
+	cin>>t;
 	while(t--) solve();
 }
