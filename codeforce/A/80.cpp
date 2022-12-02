@@ -23,18 +23,25 @@ bool isPalindrome(string S)
 }
  
 void solve(){
-	string str1;
-	string str2;	
-	
-	
-	cin>>str1;
-	str2 = str1;
-	reverse(str2.begin(), str2.end());	
-	str1 = str1+str2;
-	cout<<str1<<endl; 
+	long long n,arr[105];
+	long long bit[31]={0};
+	cin>>n;
+	for(int i = 0;i<n;i++){
+		cin>>arr[i];
+	}
+	for(int i=0;i<(1<<30);i++){
+		for ( int j = 0; j < n ; ++j ) {
+            if (i&(1<<j)){
+                 arr[j]++;
+            }     
+        }
+	}
+	for(int i = 0;i<30;i++){
+		cout<<arr[i]<<" ";
+	}
 }
 int main(){
 	long long t=1;
-	cin>>t;
+//	cin>>t;
 	while(t--) solve();
 }
