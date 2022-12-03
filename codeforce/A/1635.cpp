@@ -40,3 +40,8 @@ int main(){
 	cin>>t;
 	while(t--) solve();
 }
+//for (int j = 0; j < i; j++) {
+//                    for (int k = 0; k < ans[j].size(); k++)
+//                    for (int l = 0; l < ans[i-1-j].size(); l++)
+//                        ans[i].push_back("(" + ans[j][k] + ")" + ans[i-1-j][l]);
+//                }
