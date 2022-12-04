@@ -22,21 +22,21 @@ void solve()
 	}
 	else {
 		int i = 1;
-		while(arr[i]<arr[i+1]){
+		while(arr[i]>arr[i+1]){
 			i++;
 		}
 //		i--;
-		int j = n - 1;
+		int j = n ;
 		
-		while(arr[j]<arr[j-1]){
+		while(arr[j]>arr[j-1]){
 			j--;
 		}
-		if(i>j){
-			cout<<"no"<<endl;
-		}else {
+//		if(i>j){
+//			cout<<"no"<<endl;
+//		}else {
 			cout<<"i="<<i<<endl;
 			cout<<"j="<<j<<endl;
-		}
+//		}
 	
 	}
 
