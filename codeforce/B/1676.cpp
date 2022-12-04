@@ -4,7 +4,8 @@ using namespace std;
 void solve(){
 	string s;
 	int n ;
-	vector v(n)
+	cin>>n;
+	vector<ll> v(n);
 	for(int i = 0;i<n;i++){
 		cin>>v[i];
 	}
@@ -17,6 +18,6 @@ void solve(){
 }
 int main(){
 	long long t=1;
-//	cin>>t;
+	cin>>t;
 	while(t--) solve();
 }
