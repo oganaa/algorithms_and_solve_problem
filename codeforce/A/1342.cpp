@@ -4,17 +4,12 @@ using namespace std;
  
 void solve()
 {
-	int x,y,a,b;
+	ll x,y,a,b;
 	cin>>x>>y>>a>>b;
-	if(x==y){
-		cout<<b*(x)<<endl;
-	}else{
-		if(x>y){
-			cout<<a*(x-y)+b*y<<endl;
-		}else{
-			cout<<a*(y-x)+b*x<<endl;
-		}
-	}
+
+	cout<<min(min(x,y)*b+abs(x-y)*a,a*(x+y))<<endl;
+		
+	
 	
 	
 }
