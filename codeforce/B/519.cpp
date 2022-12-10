@@ -5,31 +5,31 @@ using namespace std;
 void solve()
 {
 	int n,m,l;
+	map<int,int> mp;
 	cin>>n;
-	vector<int> a(n),b(n-1),c(n-2);
-	int sum = 0;
-	for(int i =0;i<n;i++) {
-		cin>>a[i];
-		sum = sum + a[i];
+	
+	for(int i = 0;i<n;i++){
+		int k;
+		cin>>k;
+		mp[k]++;
 	}
-	int sum1=0;
-	for(int i = 0;i<n-1;i++) {
-		cin>>b[i];
-		sum1 = sum1+b[i];
+	if(mp.size()==0){
+		cout<<0<<endl;
+		return;
 	}
-	int temp= sum-sum1;
-	cout<<temp<<endl;
-	sum = sum -temp;
-	int sum2=0;
-	for(int i = 0;i<n-2;i++) {
-		cin>>c[i];
-		sum2 = sum2+c[i];
-	}
-	cout<<sum-sum2<<endl;
+	int ans = 0;
+	auto t = --mp.end();
+//	cout<<t->second;
+	for (auto i = mp.rbegin(); i != mp.rend(); ++i) {
+		if(t->second==i->second){
+			ans++;
+		}else break;
+    }
+    cout<<ans<<endl;
 }
 int main(){
 	int t=1;
-//	cin>>t;
+	cin>>t;
 	while(t--){
 		solve();
 	}
