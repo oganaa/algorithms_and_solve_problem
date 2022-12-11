@@ -1,37 +1,31 @@
 #include <bits/stdc++.h>
+typedef long long  ll;
 using namespace std;
-#define ll long long
- 
+
 void solve()
 {
-	int n,m,l;
-	map<int,int> mp;
-	cin>>n;
-	
-	for(int i = 0;i<n;i++){
-		int k;
-		cin>>k;
-		mp[k]++;
+	int n, x;
+	cin >> n;
+	set<int> a;
+	for(int i = 0; i < n; i++)
+	{
+		cin >> x;
+		a.insert(x);
 	}
-	if(mp.size()==0){
-		cout<<0<<endl;
-		return;
+	if((n-a.size())%2 == 0)
+	{
+		cout << a.size() << endl;
 	}
-	int ans = 0;
-	auto t = --mp.end();
-//	cout<<t->second;
-	for (auto i = mp.rbegin(); i != mp.rend(); ++i) {
-		if(t->second==i->second){
-			ans++;
-		}else break;
-    }
-    cout<<ans<<endl;
+	else
+	{
+		cout << a.size()-1 << endl;
+	}
 }
-int main(){
-	int t=1;
-	cin>>t;
-	while(t--){
+
+int32_t main(){
+	int t = 1;
+	cin >> t;
+	while (t--) {
 		solve();
 	}
-}	
- 
+}
