@@ -27,22 +27,24 @@ void solve(){
 	ll n,a,b,m;
 	cin>>n>>m;
 //	vector<ll> v(m);
-	vector<pair<int,int>> v(m); 
+	vector<pair<ll,ll>> v(m); 
 	for(int i =0;i<m;i++) {
 		cin>>a>>b;
 		v[i].first=a;
 		v[i].second=b;
+		if(v[i].first>v[i].second){
+			swap(v[i].first,v[i].second);
+		}
 	}
 //	sort(v.begin(),v.end());
 	ll ans = n;
 	int j = 1;
-//	ans = ans+(v[0].first-1);
-//	j =  v[0].first;
-//	int before = v[0].first;
 	ll k= 0;
 	for(int i=0;i<m;i++){
 		if(v[i].first+1==v[i].second){
 			k++;
+		}if(v[i].first==v[i].second){
+			ans--;
 		}
 	}
 	ans = ans + (n-1) - k;
