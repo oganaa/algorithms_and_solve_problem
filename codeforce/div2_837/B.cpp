@@ -26,28 +26,28 @@ bool isPalindrome(string S)
 void solve(){
 	ll n,a,b,m;
 	cin>>n>>m;
-//	vector<ll> v(m);
 	vector<pair<ll,ll>> v(m); 
-	for(int i =0;i<m;i++) {
+	vector<ll> first(n+1,n+1);
+	for(;m--;) {
 		cin>>a>>b;
-		v[i].first=a;
-		v[i].second=b;
-		if(v[i].first>v[i].second){
-			swap(v[i].first,v[i].second);
-		}
+		if(a>b) swap(a,b);
+		first[a] = min(first[a],b);
 	}
-//	sort(v.begin(),v.end());
-	ll ans = n;
-	int j = 1;
-	ll k= 0;
-	for(int i=0;i<m;i++){
-		if(v[i].first+1==v[i].second){
-			k++;
-		}if(v[i].first==v[i].second){
-			ans--;
-		}
+	for(int i =n-1;i>=1;i--){
+		
+		first[i] = min(first[i],first[i+1]);
+		
 	}
-	ans = ans + (n-1) - k;
+	for(int i=1;i<=n;i++){
+		
+		cout<<first[i]<<" ";
+		
+	}
+	cout<<endl;
+	ll ans=0;
+	for(int i =1;i<=n;i++){
+		ans = ans + first[i] - i;
+	}
 	cout<<ans<<endl;
 }
 int main(){
