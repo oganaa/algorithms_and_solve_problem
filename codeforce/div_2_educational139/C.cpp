@@ -5,15 +5,33 @@ using namespace std;
 void solve(){
 	ll n,a,b,m;
 	cin>>m;
-	string s[2];
-	for(int i = 0;i<2;i++){
-		cout<<s[i];
-	}
-	for(int i = 0;i<m;i++){
-		if(s[0][i]=='B'&&s[1][i]=='B'){
-			
+	string s;
+	string s1;
+	cin>>s>>s1;
+	int index = -1;
+	int n = s.size();
+	for(int i =0;i<s.size();i++){
+		if(s[i]!=s1[i]){
+			index=i;
 		}
 	}
+	if(index==-1){
+		cout<<"YES"<<endl;
+		return;
+	}
+	bool ok = true;
+	
+	if(s[index]=='B'){
+		char current;
+		for(int i = index+1;i<n;i++){
+			if(s[i]=='W') ok=false;
+			if(s1[1]=='B'){
+				
+			}
+		}
+	}
+	
+	
 	
 	
 }
