@@ -4,31 +4,75 @@ using namespace std;
  
 void solve(){
 	ll n,a,b,m;
-	cin>>m;
 	string s;
 	string s1;
-	cin>>s>>s1;
-	int index = -1;
-	int n = s.size();
+	cin>>n;
+	cin>>s;
+	cin>>s1;
+	ll index = -1;
+	
 	for(int i =0;i<s.size();i++){
 		if(s[i]!=s1[i]){
 			index=i;
+			break;
 		}
 	}
 	if(index==-1){
 		cout<<"YES"<<endl;
 		return;
 	}
+
 	bool ok = true;
-	
 	if(s[index]=='B'){
-		char current;
+		ll lastIndex=-1;
+		bool isDown=false;
 		for(int i = index+1;i<n;i++){
-			if(s[i]=='W') ok=false;
-			if(s1[1]=='B'){
-				
+			if(s1[i]=='B'&&s[i]=='B'&&!isDown){
+				isDown=true;
+			}else if(s[i]=='B'&&s1[i]=='W'&&!isDown){
+				isDown=false;
+			}
+			else if(s1[i]=='B'&&s[i]=='B'&&isDown){
+				isDown=false;
+			}else if(s1[i]=='B'&&s[i]=='W'&&isDown){
+				isDown= true;
+			}else{
+				lastIndex=i;
+				break;
 			}
 		}
+		if(lastIndex==-1){
+			cout<<"YES"<<endl;
+		}else{
+			cout<<"NO"<<endl;
+		}
+	}else if(s1[index]=='B'){
+		ll lastIndex=-1;
+		bool isDown=true;
+		for(int i = index+1;i<n;i++){
+			if(s1[i]=='B'&&s[i]=='B'&&isDown){
+				isDown=false;
+			}else if(s1[i]=='B'&&s[i]=='W'&&isDown){
+				isDown=true;
+			}
+			else if(s1[i]=='B'&&s[i]=='B'&&!isDown){
+				isDown=true;
+			}else if(s[i]=='B'&&s1[i]=='W'&&!isDown){
+				isDown= false;
+			}else{
+//				cout<<"duus"<<endl;
+				lastIndex=i;
+				break;
+			}
+		}
+		if(lastIndex==-1){
+			cout<<"YES"<<endl;
+		}else{
+			cout<<"NO"<<endl;
+		}
+//		cout<<"ans2="<<lastIndex<<endl;
+	}else {
+		cout<<"NO"<<endl;
 	}
 	
 	
