@@ -9,12 +9,12 @@ void solve()
 	for(int i =0;i<m;i++){
 		cin>>v[i];
 	}
-	sort(v.begin(),v.end());
-	int mx = v[m-1];
+
+	int mx = *max_element(v.begin(),v.end());
 	if(n/k>=mx){
-		cout<<"YES"<<endl;
+		cout<<"Yes"<<endl;
 	}else{
-		cout<<"NO"<<endl;
+		cout<<"No"<<endl;
 	}
 }
 int main()

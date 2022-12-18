@@ -7,7 +7,7 @@ void solve()
 	cin>>n;
 	string s;
 	cin>>s;
-	
+
 }
 int main()
 {
