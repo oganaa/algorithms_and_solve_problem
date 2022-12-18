@@ -3,19 +3,36 @@ using namespace std;
 #define ll long long
 void solve()
 {
-	ll n,m,k;
-	cin>>n>>m>>k;
-	vector<ll> v(m);
-	for(int i =0;i<m;i++){
-		cin>>v[i];
+	ll a,b,d,c;
+	cin>>a>>b>>c>>d;
+	bool isAnswer = false;
+	if((a<b&&c<d)&&(a<c&&b<d)){
+//		isAnswer = true;
+		cout<<"YES"<<endl;
+		return;
+//		cout<<isAnswer<<" ";
+	}else{
+		bool isAnswer = false;
+	
+	for(int i =0;i<4;i++){
+		if((a<b&&c<d)&&(a<c&&b<d)){
+			isAnswer = true;
+			break;
+		}
+		ll a1=a,b1=b,d1=d;
+		a = c;
+		b = a1;
+		d = b1;
+		c = d1;
 	}
 
-	int mx = *max_element(v.begin(),v.end());
-	if(n/k>=mx){
-		cout<<"Yes"<<endl;
-	}else{
-		cout<<"No"<<endl;
-	}
+	if(isAnswer){
+		cout<<"YES"<<endl;
+	}else cout<<"NO"<<endl;
+}
+	
+	
+	
 }
 int main()
 {
