@@ -30,11 +30,6 @@ void solve()
 		cout<<1<<endl;
 		cout<<1<<endl;
 	}
-//	string s;
-//	cin>>s;
-
-//	cout<<endl;
-//	cout<<sum;
 }
 int main()
 {
