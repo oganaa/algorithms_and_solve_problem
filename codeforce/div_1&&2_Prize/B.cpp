@@ -3,37 +3,35 @@ using namespace std;
 #define ll long long
 void solve()
 {
-	ll a,b,d,c;
-	cin>>a>>b>>c>>d;
-	bool isAnswer = false;
-	if((a<b&&c<d)&&(a<c&&b<d)){
-//		isAnswer = true;
-		cout<<"YES"<<endl;
-		return;
-//		cout<<isAnswer<<" ";
-	}else{
-		bool isAnswer = false;
-	
-	for(int i =0;i<4;i++){
-		if((a<b&&c<d)&&(a<c&&b<d)){
-			isAnswer = true;
-			break;
-		}
-		ll a1=a,b1=b,d1=d;
-		a = c;
-		b = a1;
-		d = b1;
-		c = d1;
+	ll n,m,k,a;
+	ll c= 0;
+	cin>>n>>m>>k;
+	vector<int> v(m);
+	for(int i = 0;i<m;i++){
+		cin>>v[i];
 	}
-
-	if(isAnswer){
-		cout<<"YES"<<endl;
-	}else cout<<"NO"<<endl;
+	
+	for(auto it : v){
+		if((n+k-1)/k<it){
+			cout<<"NO"<<endl;
+			return ;
+		}else if((n+k-1)/k==it&&n%k!=0){
+			c++;
+		}
+	}
+	
+	
+	if(n%k<c){
+        cout<<"NO"<<endl;
+        return;
+    }
+    cout<<"YES"<<endl;
+  
+	return;
 }
 	
 	
 	
-}
 int main()
 {
 	ll t = 1;
