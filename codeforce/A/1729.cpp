@@ -5,15 +5,17 @@ using namespace std;
  
 void solve(){
 	ll a,b,c,d;
-	cin>>a>>b;
-	
-	if(a==0&&b==0||a==0&&b>0){
-		cout<<1<<endl;
-	}else if(a>0&&b==0){
-		cout<<a+1<<endl;
-	}else{
-		cout<<a+b*2+1<<endl;
+	cin>>a>>b>>c;
+	ll d1,d2,ans=0;
+	 d1 = abs(a-1);
+	 d2 = abs(b - c) + c - 1;
+	if(d1<=d2){
+		ans = ans + 1;
 	}
+	if( d1 >= d2) {
+		ans = ans +2;
+	}
+	cout<<ans<<endl;
 }
 int main(){
 	ll t=1;
