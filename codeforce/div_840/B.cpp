@@ -14,7 +14,7 @@ void solve(){
 	}
 	ll ans = k;
 	while(k>0){
-		while(!q.empty()&&q.top().second<ans){
+		while(!q.empty()&&q.top().second<=ans){
 			q.pop();
 		}
 		k -= q.top().first;
