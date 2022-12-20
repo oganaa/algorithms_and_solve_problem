@@ -1,53 +1,35 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include<bits/stdc++.h>
 #define ll long long
-void solve()
-{
-	ll n,k,a;
+using namespace std;
+void solve(){
+	priority_queue <ll, vector<pair<ll,ll>>, greater<pair<ll,ll>>> q;
+	ll n,k;
 	cin>>n>>k;
-//	vec<ll> h(n);
-//	vec<ll> p(n);
-	vector<pair<ll,ll>> p(n);
-	for(int i = 0;i<n;i++){
-		cin>>a;
-		p[i].second=a;
-	}
-	for(int i = 0;i<n;i++){
-		cin>>a;
-		p[i].first=a;
+	vector<ll> h(n),p(n);
+	for(int i = 0;i<n;i++)cin>>h[i];
+	for(int i = 0;i<n;i++)cin>>p[i];
 	
+	for(int i = 0;i<n;i++){
+		q.push(make_pair(p[i],h[i]));
 	}
-	sort(p.begin(),p.end());
-
-	int i = 0;
-	int ans = k;
+	ll ans = k;
 	while(k>0){
-		while(p.size()>0&&p[0].second<=ans){
-			 p.erase(p.begin());
+		while(!q.empty()&&q.top().second<ans){
+			q.pop();
 		}
-		k -= p[0].first;
-		ans = ans +k;
+		k -= q.top().first;
+		ans = ans + k;
 	}
-
-//	cout<<<<endl;
-	if(p.size()==0)
+		
+	if(q.size()==0)
 	cout<<"YES"<<endl;
 	else cout<<"NO"<<endl;
-//	cout<<l<<endl;
-//	cout<<
-//	for(int i = 0;i<n;i++){
-//		cin>>a;
-//		p[i].second.first=a;
-//		cout<<p[i].first<<" "<<p[i].second<<endl;
-		
-//	}
+
 }
-int main()
-{
-	ll t = 1;
-	cin>>t;
-	while (t--)
-	{
+int main(){
+	ll t=1;
+	cin>>t; 
+	while(t--){
 		solve();
 	}
 }
