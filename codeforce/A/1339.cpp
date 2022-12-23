@@ -4,13 +4,14 @@ using namespace std;
 void solve(){
 	long long x,y,n;
 	cin>>x;
-	int dp[n+1];
-	dp[1] =1;
-	dp[2] = 2;
-	for(int i = 3;i<=n;i++){
-		dp[i] = dp[i-2]+dp[i-1];
-	}
-	cout<<dp[n]<<endl;
+//	long long dp[x+2]={0};
+//	dp[0] = 0;
+//	dp[1] =1;
+//	dp[2] = 2;
+//	for(long long i = 3;i<=x;i++){
+//		dp[i] = dp[i-2]+dp[i-1];
+//	}
+	cout<<x<<endl;
 	
 }
 int main(){
