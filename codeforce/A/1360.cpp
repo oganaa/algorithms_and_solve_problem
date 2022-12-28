@@ -1,20 +1,37 @@
 #include<bits/stdc++.h>
-using namespace std;
 #define ll long long
-void solve(){
-	ll a,b,c;
-	
-	cin>>a>>b;
-	c = min(a,b);
-	c=c*2;
-	a = max(max(a,b),c);
-	cout<<a*a<<endl;
-}
-int main(){
-	int t=1;
-	cin>>t;
-	
-	while(t--){
-		solve();
+const int n1=1e9+7;
+using namespace std;
+int power(int a, int b)
+{
+	int x = 1;
+ 
+	while (b)
+	{
+		if (b & 1) x = (x*a);
+		a = (a*a);
+		b >>= 1;
 	}
+	return x;
 }
+void solve()
+{
+    ll n;
+    cin>>n;
+    ll ans=((((n*(n+1))%n1)*(4*n-1))%n1*337)%n1;
+    cout<<ans<<endl;
+}
+
+int main()
+{
+   
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+ 
+ 
+}
+ 

@@ -1,34 +1,19 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<math.h>
 using namespace std;
-using ll = long long;
-using ld = long double;
-const ll N = 1'000'000'000'000L;
-#define ll long long
-unordered_set<ll> cubes;
-
-void precalc() {
-  for (ll i = 1; i * i * i <= N; i++) {
-    cubes.insert(i * i * i);
-  }
-}
-void solve(){
-	
-	ll x;
-  	cin >> x;
-  	for(ll i =1;i*i*i<=x;i++){
-  		if(cubes.count(x-i*i*i)){
-  			cout<<"YES"<<endl;
-			return;
-		}
-	}
-	cout<<"NO"<<endl;
-	
-}
 int main(){
-	precalc();
-	int t=1;
-	cin>>t;
-	while(t--){
-		solve();
+	long long int a,b,c,d;
+	cin>>a>>b>>c>>d;
+	int sum = 0;
+	while(a>0&&c>0&&d>0){
+		sum = sum + 256;
+		a--;c--;d--;
 	}
+	while(a>0&&b>0){
+		
+		sum = sum + 32;
+		a--;
+		b--;
+	}
+	cout<<sum;
 }
