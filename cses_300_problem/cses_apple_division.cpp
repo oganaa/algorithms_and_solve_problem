@@ -16,10 +16,10 @@ int main(){
 		ll temp = 0;
 		for(int j = 0;j<n;j++){
 			if(i&1<<j){
-				temp = temp + v[i];
+				temp = temp + v[j];
 			}
 		}
-		ll diff= abs(sum-temp-temp);
+		ll diff= abs((sum-temp)-temp);
 		ans = min(ans,diff);
 	}
 	cout<<ans<<endl;
