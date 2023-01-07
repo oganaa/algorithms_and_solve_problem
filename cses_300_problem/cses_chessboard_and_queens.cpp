@@ -20,15 +20,17 @@ void search(int y) {
 	}
 }
 int main(){
-	int t=1;
+	int a,b;
+	cin>>a>>b;
+	cout<<ceil(a/b);
 	
-	for(int i = 0;i<n;i++){
-		for(int j = 0;j<n;j++){
-			cin>>chess[i][j];
+	
+	
+	
+	
 		}	
-	}
 	
-	search(0);
+	
 	
 	cout<<c;
 }	
