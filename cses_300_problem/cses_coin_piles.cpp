@@ -2,20 +2,18 @@
 using namespace std;
 #define ll long long
  #define MOD 1000000007
-void solve()
-{
-	long long a,b;
-    cin>>a>>b;
-		if(a<b) swap(a,b)
-		if((a+b)%3!=0||a>b*2){
-			cout<<"NO"<<endl;
-		}else cout<<"YES"<<endl;
-}
+
 int main(){
-	int t=1;
+	int t=100;
 	cin>>t;
-	while(t--){
-		solve();
+	int c=0;
+	int j = 90;
+	for(int i = 10;i<=50;i++){
+		
+	
+		if(i+j==100)c++;
+			j--;
 	}
+	cout<<c;
 }	
  

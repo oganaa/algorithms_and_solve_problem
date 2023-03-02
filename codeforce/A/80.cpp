@@ -1,47 +1,22 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-bool isPrime(int num){
-    bool flag=true;
-    for(int i = 2; i <= num / 2; i++) {
-       if(num % i == 0) {
-          flag = false;
-          break;
-       }
+
+int t, n, cnt[26];
+string s;
+
+int main() {
+  cin >> t;
+  while (t--) {
+    cin >> n >> s;
+    memset(cnt, 0, sizeof cnt);
+    for (char c : s) cnt[c-'a']++;
+    sort(cnt, cnt+26, greater<int>());
+    int ans = 0;
+    for (int i = 0; i < 26; i++) {
+      if (cnt[i] == 0) break;
+      if (i < 13) ans += cnt[i];
     }
-    return flag;
-}
-bool isPalindrome(string S)
-{
-    string P = S;
-    reverse(P.begin(), P.end());
-    if (S == P) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
- 
-void solve(){
-	long long n,arr[105];
-	long long bit[31]={0};
-	cin>>n;
-	for(int i = 0;i<n;i++){
-		cin>>arr[i];
-	}
-	for(int i=0;i<(1<<30);i++){
-		for ( int j = 0; j < n ; ++j ) {
-            if (i&(1<<j)){
-                 arr[j]++;
-            }     
-        }
-	}
-	for(int i = 0;i<30;i++){
-		cout<<arr[i]<<" ";
-	}
-}
-int main(){
-	long long t=1;
-//	cin>>t;
-	while(t--) solve();
+    cout << ans << endl;
+  }
+  return 0;
 }
